@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客户端操作cookie</title>
+</head>
+
+<body>
+  <button id="btn">获取cookie</button>
+
+  <script>
+    document.querySelector('#btn').onclick = function () {
+      // 1.设置了过期时间代表硬盘cookie，不会主动销毁，除非我们手动销毁
+      // 没有设置过期时间代表内存cookie,关闭页面cookie就会销毁
+      // 2.cookie在客户端和服务器都能够被操作
+      // 3.cookie大小不能超过4kb
+      // 4.cookie有相应的生命周期，作用域,httpOnly,sameSite,security，key/value等属性
+      // 5.cookie的内容是明文传输的，保存在客户端，不安全，有xss,csrf攻击危险
+      document.cookie = 'name=coder;max-age=60'
+    }
+  </script>
+</body>
+
+</html>

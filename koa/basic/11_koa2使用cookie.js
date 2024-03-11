@@ -4,25 +4,25 @@
 
 // todo 原理其实是koa源码中使用了npm的cookies模块
 
-const Koa = require('koa')
-const app = new Koa()
+const Koa = require("koa");
+const app = new Koa();
 
 app.use(async (ctx) => {
-  if (ctx.url === '/index') {
-    ctx.cookies.set('cid', 'hello world', {
-      domain: 'localhost',
-      path: '/index',
+  if (ctx.url === "/index") {
+    ctx.cookies.set("cid", "hello world", {
+      domain: "localhost",
+      path: "/index",
       maxAge: 10 * 60 * 1000,
-      expires: new Date('2022-05-15'),
+      expires: new Date("2022-05-15"),
       httpOnly: false,
-      overwrite: false
-    })
-    ctx.body = 'cookie is ok'
+      overwrite: false,
+    });
+    ctx.body = "cookie is ok";
   } else {
-    ctx.body = 'hello world'
+    ctx.body = "hello world";
   }
-})
+});
 
 app.listen(3000, () => {
-  console.log('3000端口启动完毕~')
-})
+  console.log("3000端口启动完毕~");
+});

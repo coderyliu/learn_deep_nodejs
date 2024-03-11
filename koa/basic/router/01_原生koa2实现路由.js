@@ -1,7 +1,7 @@
-const Koa = require('koa')
-const fs = require('fs')
+const Koa = require("koa");
+const fs = require("fs");
 
-const app = new Koa()
+const app = new Koa();
 
 /**
  * 用promise封装异步读取文件方法
@@ -11,15 +11,15 @@ const app = new Koa()
 
 function render(page) {
   return new Promise((resolve, reject) => {
-    let viewUrl = `../views/${page}`
+    let viewUrl = `../views/${page}`;
     fs.readFile(viewUrl, "binary", (err, data) => {
       if (err) {
-        reject(err)
+        reject(err);
       } else {
-        resolve(data)
+        resolve(data);
       }
-    })
-  })
+    });
+  });
 }
 
 /**
@@ -29,31 +29,31 @@ function render(page) {
  */
 
 async function route(url) {
-  let view = '404.html'
+  let view = "404.html";
   switch (url) {
-    case '/':
-      view = 'index.html'
-      break
-    case '/index':
-      view = 'index.html'
-      break
-    case '/todo':
-      view = 'todo.html'
-      break
+    case "/":
+      view = "index.html";
+      break;
+    case "/index":
+      view = "index.html";
+      break;
+    case "/todo":
+      view = "todo.html";
+      break;
     default:
-      break
+      break;
   }
-  let html = await render(view)
-  return html
+  let html = await render(view);
+  return html;
 }
 
 app.use(async (ctx) => {
-  let url = ctx.request.url
-  let html = await route(url)
+  let url = ctx.request.url;
+  let html = await route(url);
 
-  ctx.body = html
-})
+  ctx.body = html;
+});
 
 app.listen(3000, () => {
-  console.log('3000端口服务启动成功!')
-})
+  console.log("3000端口服务启动成功!");
+});

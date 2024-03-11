@@ -1,13 +1,13 @@
-const dotenv = require('dotenv')
-const path = require('path')
-const fs = require('fs')
+const dotenv = require("dotenv");
+const path = require("path");
+const fs = require("fs");
 
 // 将根目录下的.env里面的变量注入环境变量
-dotenv.config()
+dotenv.config();
 
 // 读取本地目录下生成的非对称密钥
-const PRIVATE_KEY = fs.readFileSync(path.join(__dirname, './keys/privat.key'))
-const PUBLIC_KEY = fs.readFileSync(path.join(__dirname, './keys/public.key'))
+const PRIVATE_KEY = fs.readFileSync(path.join(__dirname, "./keys/privat.key"));
+const PUBLIC_KEY = fs.readFileSync(path.join(__dirname, "./keys/public.key"));
 
 const {
   APP_HOST,
@@ -16,8 +16,8 @@ const {
   MYSQL_PORT,
   MYSQL_DATABASE,
   MYSQL_USER,
-  MYSQL_PASSWORD
-} = process.env
+  MYSQL_PASSWORD,
+} = process.env;
 
 module.exports = {
   APP_HOST,
@@ -28,5 +28,5 @@ module.exports = {
   MYSQL_USER,
   MYSQL_PASSWORD,
   PRIVATE_KEY,
-  PUBLIC_KEY
-}
+  PUBLIC_KEY,
+};

@@ -4,24 +4,22 @@
 //  PATCH：更新数据；
 //  DELETE：删除数据；
 
-const http = require('http')
-const url = require('url')
+const http = require("http");
+const url = require("url");
 
 const server = http.createServer((req, res) => {
-  const {
-    pathname
-  } = url.parse(req.url, true)
-  if (pathname === '/login') {
-    if (req.method === 'POST') {
-      req.setEncoding('utf-8')
+  const { pathname } = url.parse(req.url, true);
+  if (pathname === "/login") {
+    if (req.method === "POST") {
+      req.setEncoding("utf-8");
       // 获取这种body携带的数据， 我们需要通过监听req的 data事件来获取；
-      req.on('data', (data) => {
-        console.log(data)
-      })
-      res.end('hello world')
+      req.on("data", (data) => {
+        console.log(data);
+      });
+      res.end("hello world");
     }
   }
-})
+});
 
 server.listen(3000, () => {
   console.log("服务器启动成功~");

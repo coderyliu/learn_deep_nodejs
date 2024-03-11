@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require("fs");
 
 // ?传统的读写方式--也是不灵活的，很麻烦
 // fs.readFile('./a.txt', (err, data) => {
@@ -9,7 +9,7 @@ const fs = require('fs')
 // })
 
 // ?Stream的写法
-const reader = fs.createReadStream('./a.txt')
-const writer = fs.createWriteStream('./e.txt')
+const reader = fs.createReadStream("./a.txt");
+const writer = fs.createWriteStream("./e.txt");
 
-reader.pipe(writer)
+reader.pipe(writer);

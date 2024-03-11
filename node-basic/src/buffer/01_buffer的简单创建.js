@@ -1,4 +1,4 @@
-const message = 'hello'
+const message = "hello";
 
 // 创建buffer
 // 0-15 0-15
@@ -9,6 +9,6 @@ const message = 'hello'
 // const buffer = new Buffer(message)
 // console.log(buffer)
 
-// ?2.创建方式2 
-const buffer = Buffer.from(message)
-console.log(buffer)
+// ?2.创建方式2
+const buffer = Buffer.from(message);
+console.log(buffer);

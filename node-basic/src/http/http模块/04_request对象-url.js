@@ -1,9 +1,9 @@
-const http = require('http')
-const url = require('url')
-const qs = require('querystring')
+const http = require("http");
+const url = require("url");
+const qs = require("querystring");
 
 const server = http.createServer((req, res) => {
-  res.setHeader('Content-Type', 'text/plain;charset=utf-8')
+  res.setHeader("Content-Type", "text/plain;charset=utf-8");
   // ?最基本的方式
   // if (req.url === '/login') {
   //   res.end('欢迎回来')
@@ -14,20 +14,17 @@ const server = http.createServer((req, res) => {
   // }
 
   // ?如果url当中携带参数
-  const {
-    pathname,
-    query
-  } = url.parse(req.url, true)
-  if (pathname === '/login') {
-    console.log(query)
+  const { pathname, query } = url.parse(req.url, true);
+  if (pathname === "/login") {
+    console.log(query);
     // console.log(qs.parse(query))
-    res.end('请求结果')
+    res.end("请求结果");
   }
 
   // console.log(obj)
   // res.end('请求结果')
-})
+});
 
 server.listen(3000, () => {
-  console.log('3000端口启动完毕~')
-})
+  console.log("3000端口启动完毕~");
+});

@@ -1,15 +1,15 @@
-const EventEmitter=require('events')
+const EventEmitter = require("events");
 
-class MyEventEmitter extends EventEmitter{}
+class MyEventEmitter extends EventEmitter {}
 
-const event=new MyEventEmitter()
+const event = new MyEventEmitter();
 
-event.on('play',(value)=>{
-  console.log(value)
-})
-event.on('play',(value)=>{
-  console.log(value)
-})
+event.on("play", (value) => {
+  console.log(value);
+});
+event.on("play", (value) => {
+  console.log(value);
+});
 
-event.emit('play','ok')
-event.emit('play','movie')
+event.emit("play", "ok");
+event.emit("play", "movie");

@@ -1,8 +1,7 @@
-const http = require('http');
+const http = require("http");
 
 // 创建一个web服务器
 const server = http.createServer((req, res) => {
-
   // ?响应结果的方式有两种
   // todo write这种方式是直接写出数据不会关闭流
   // ?如果我们没有调用 end和close，客户端将会一直等待结果：

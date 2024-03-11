@@ -34,19 +34,19 @@ app.use(
 
 // ?这个process对象里面的监听uncaughtException,捕捉try catch没有捕捉到的错误
 process.on("uncaughtException", (err) => {
-  // process.exit(1); 
+  // process.exit(1);
   //!表示退出进程，即关闭服务器，尽量少用 而是用pm2或者其他工具，来重启服务器
   //*1或者非0值表示退出进程 0表示没有错误，不结束进程
 });
 
 // ?全局错误捕捉器
-app.use(async (ctx,next)=>{
+app.use(async (ctx, next) => {
   try {
-    await next()
+    await next();
   } catch (error) {
-    ctx.app.emit('error',error,ctx)
+    ctx.app.emit("error", error, ctx);
   }
-})
+});
 
 app.use(bodyParser());
 // 路由中间件

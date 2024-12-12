@@ -8,7 +8,7 @@ server.on("request", (req, res) => {
   console.log(path.parse(pathURL));
   console.log(path.dirname(pathURL));
   console.log(path.basename(pathURL));
-  console.log(path.join());
+  console.log(path.join(__dirname, "a", "b", "c"));
   res.end("ok");
 });
 

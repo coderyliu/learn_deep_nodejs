@@ -12,7 +12,9 @@ const newQuery = queryString.stringify(queryObj, null, null, {
 });
 
 console.log(queryString.parse(query));
+console.log(queryString.decode(query));
 console.log(queryString.stringify(queryObj));
+console.log(queryString.encode(queryObj));
 console.log(newQuery);
 console.log(queryString.escape(query));
 console.log(queryString.unescape(query));
